@@ -26,6 +26,7 @@ main {
   @scope (&) {
     img.dish {
       border-radius: var(--radius-medium);
+      display: block;
       height: 18.75rem;
       margin-bottom: 2.5rem;
       object-fit: cover;
@@ -68,6 +69,11 @@ main {
       & td {
         color: var(--color-highlight);
         font-weight: 700;
+      }
+
+      & th {
+        padding-left: 2rem;
+        width: 51%;
       }
 
       :is(th, td) {
