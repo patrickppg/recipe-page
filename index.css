@@ -1,0 +1,85 @@
+@import url("/styles/defaults.css") layer(defaults);
+
+body {
+  background: var(--color-stone-100);
+  padding: 8rem 4.75rem;
+
+  @media (max-width: 560px) {
+    padding: unset;
+  }
+}
+
+main {
+  & {
+    background: white;
+    border-radius: var(--radius-large);
+    box-sizing: border-box;
+    margin-inline: auto;
+    max-width: 46rem;
+    padding: 2.5rem;
+
+    @media (max-width: 560px) {
+      border-radius: unset;
+    }
+  }
+
+  @scope (&) {
+    img.dish {
+      border-radius: var(--radius-medium);
+      height: 18.75rem;
+      margin-bottom: 2.5rem;
+      object-fit: cover;
+      width: 100%;
+
+      @media (max-width: 560px) {
+        border-radius: unset;
+        height: unset;
+        margin: -2.5rem 0 2.5rem -2.5rem;
+        width: 100vw;
+      }
+    }
+
+    div.preparation {
+      & {
+        background: var(--color-rose-50);
+        border-radius: var(--radius-medium);
+        margin-block: 2rem;
+        padding: 1.5rem;
+        --color-highlight: var(--color-rose-800);
+      }
+
+      > p {
+        color: var(--color-highlight);
+        font-size: 1.25rem;
+        font-weight: 600;
+        line-height: 1;
+        margin-bottom: 1rem;
+      }
+    }
+
+    table.nutrition {
+      & {
+        border-collapse: collapse;
+        margin-top: 1.5rem;
+        text-align: left;
+        width: 100%;
+      }
+      
+      & td {
+        color: var(--color-highlight);
+        font-weight: 700;
+      }
+
+      :is(th, td) {
+        tr:not(:first-of-type) & {
+          padding-top: .75rem;
+        }
+
+        tr:not(:last-of-type) & {
+          border-bottom: 1px solid var(--color-stone-150);
+          padding-bottom: .75rem;
+        }
+      }
+    }
+  }
+}
